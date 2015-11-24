@@ -8,7 +8,7 @@
 # Example: The method, given 'Ruby is The best language in the World' and
 # 'the', should return 2 (comparison should be case-insensitive)
 
-#
+#first attempt
 # def find_frequency(sentence, word)
 #   word = word.downcase
 #   sentence.split.count(word)
