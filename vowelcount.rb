@@ -1,19 +1,8 @@
 #Return the number of vowels in the given string.
 #
-#attempt 5
+#attempt 7
 def getCount(string)
-  string = string.chars
-  #split string into sep chars delimited with commas, in array
-  vowels = ["a", "e", "i", "o", "u"]
-  n = 0
-  string.length.times do
-    matched = vowels.map do |v|
-      v if v == string[n]
-      end
-      n+=1
-      return n
-    end
-  puts matched
+  puts string.scan(/a*e*i*o*u*/).length
 end
 
 getCount("Michelle")
