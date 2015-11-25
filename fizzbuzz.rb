@@ -2,16 +2,16 @@
 
 def fizzbuzz(max)
   max.times do |n|
-    if n % 3.zero?
-      print "fizz"
-    elsif n % 5.zero?
-      print "buzz"
-    elsif n % 15.zero?
-      print "fizzbuzz"
+    if n % 15 == 0
+      puts "fizzbuzz"
+    elsif n % 5 == 0
+      puts "buzz"
+    elsif n % 3 == 0
+      puts "fizz"
     else
-      print n
+      puts n
     end
   end
 end
 
-fizzbuzz(25)
+fizzbuzz(124)
