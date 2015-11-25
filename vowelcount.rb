@@ -1,13 +1,21 @@
-#Return the number (count) of vowels in the given string.
+#Return the number of vowels in the given string.
 #
-#attempt 4
+#attempt 5
 def getCount(string)
-  string = string.split("")   #=> ['M', 'i', 'c', 'h'...]
+  string = string.chars
+  #split string into sep chars delimited with commas, in array
   vowels = ["a", "e", "i", "o", "u"]
-  count_of_vowels = string & vowels
-  puts count_of_vowels.length
+  n = 0
+  new_string = string.map do |char|
+    char if char == vowels[n]
+    n+=1
+    return n
+  end
+  puts new_string.length
 end
 
 getCount("Michelle")
 
 #try regexp with slice?
+#tried string = string.split ==> ["Michelle"] but need each char as string ==> string.chars!
+#desired result is for "Michelle" => ["e","e", "i"].length = 3
