@@ -6,12 +6,14 @@ def getCount(string)
   #split string into sep chars delimited with commas, in array
   vowels = ["a", "e", "i", "o", "u"]
   n = 0
-  new_string = string.map do |char|
-    char if char == vowels[n]
-    n+=1
-    return n
-  end
-  puts new_string.length
+  string.length.times do
+    matched = vowels.map do |v|
+      v if v == string[n]
+      end
+      n+=1
+      return n
+    end
+  puts matched
 end
 
 getCount("Michelle")
