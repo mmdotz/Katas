@@ -2,11 +2,12 @@
 #
 #attempt 7
 def getCount(string)
-  puts string.scan(/a*e*i*o*u*/).length
+  vowels = 'aeiou'
+  puts string.count(vowels)
 end
 
 getCount("Michelle")
 
-#try regexp with slice?
-#tried string = string.split ==> ["Michelle"] but need each char as string ==> string.chars!
+#=> ["", "i", "", "", "e", "", "", "e", ""] ???
 #desired result is for "Michelle" => ["e","e", "i"].length = 3
+#remove empty strings from array
