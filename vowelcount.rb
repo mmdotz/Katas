@@ -1,14 +1,11 @@
 #Return the number (count) of vowels in the given string.
 #
-#attempt 3
-def getCount(str)
-  string = str.split("")
+#attempt 4
+def getCount(string)
+  string = string.split("")   #=> ['M', 'i', 'c', 'h'...]
   vowels = ["a", "e", "i", "o", "u"]
-  string.map { |char|
-    char.vowels.map { |v|
-    puts v.count
-  }
-}
+  count_of_vowels = string & vowels
+  puts count_of_vowels.length
 end
 
 getCount("Michelle")
