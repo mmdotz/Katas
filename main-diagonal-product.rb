@@ -3,17 +3,18 @@
 
 #return value at index n+1
 
-def main_diagonal_product(mat2)
-  n = 0
-  product =[]
-  mat2.length.times do
-    product << mat2.select{ |x| x[n] }
-    n+=1
-    end
-  product = product.flatten.inject(:*)
-  print product
+def main_diagonal_product(mat)
+  n = 0                         # => 0
+  @new_mat = []                 # => []
+  mat.length.times do           # => 2
+    @new_mat << mat[n][n]       # => [1], [1, 4]
+    n+=1                        # => 1, 2
+    end                         # => 2
+  puts @new_mat.inject(:*)      # => nil
 end
 
-mat2 = [[1,2],[3,4]]
-mat = [[1,2,3],[4,5,6],[7,8,9]]
-main_diagonal_product(mat2)
+mat = [[1,2],[3,4]]         # => [[1, 2], [3, 4]]
+# mat = [[1,2,3],[4,5,6],[7,8,9]]
+main_diagonal_product(mat)  # => nil
+
+# >> 4
