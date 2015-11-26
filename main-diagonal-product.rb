@@ -6,15 +6,15 @@
 def main_diagonal_product(mat)
   n = 0                         # => 0
   @new_mat = []                 # => []
-  mat.length.times do           # => 2
-    @new_mat << mat[n][n]       # => [1], [1, 4]
-    n+=1                        # => 1, 2
-    end                         # => 2
+  mat.length.times do           # => 3
+    @new_mat << mat[n][n]       # => [1], [1, 5], [1, 5, 9]
+    n+=1                        # => 1, 2, 3
+    end                         # => 3
   puts @new_mat.inject(:*)      # => nil
 end
 
-mat = [[1,2],[3,4]]         # => [[1, 2], [3, 4]]
-# mat = [[1,2,3],[4,5,6],[7,8,9]]
-main_diagonal_product(mat)  # => nil
+# mat = [[1,2],[3,4]]
+mat = [[1,2,3],[4,5,6],[7,8,9]]  # => [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+main_diagonal_product(mat)       # => nil
 
-# >> 4
+# >> 45
