@@ -21,11 +21,8 @@
 def printer_error(str)
   bad = /[n - z]/
   errors_count = str.downcase.scan(bad).count
-  if errors_count > 0
-    return errors_count + "/" + str.length
-  else
-    return "0/" + str.length
-  end
+  puts "#{errors_count}" + "/" + "#{str.length}"
 end
 
 printer_error("aaddddtttpwaaa")
+printer_error("bbbffeei")
