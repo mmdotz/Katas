@@ -19,10 +19,10 @@
 # error_printer(s) => "8/22"
 
 def printer_error(str)
-  bad = /[n - z]/
-  errors_count = str.downcase.scan(bad).count
-  puts "#{errors_count}" + "/" + "#{str.length}"
+  bad = /[n-z]/                                     # => /[n-z]/, /[n-z]/
+  errors_count = str.downcase.scan(bad).length      # => 5, 0
+  return "#{errors_count}" + "/" + "#{str.length}"  # => "5/14", "0/8"
 end
 
-printer_error("aaddddtttpwaaa")
-printer_error("bbbffeei")
+printer_error("aaddddtttpwaaa")  # => "5/14"
+printer_error("bbbffeei")        # => "0/8"
