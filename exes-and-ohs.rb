@@ -7,13 +7,12 @@
 # XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 # XO("zzoo") => false
 
-
 def XO(str)
-  if str.count("x") == str.count("o")
+  if str.downcase.count("x") == str.downcase.count("o")
     return true
   else
     return false
   end
 end
 
-XO("boxxxo")
+#needed to be downcased
