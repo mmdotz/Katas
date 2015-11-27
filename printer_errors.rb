@@ -12,21 +12,20 @@
 # and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
 # The string has a length greater or equal to one and contains only letters from ato z.
 
-s="aaabbbbhaijjjm"
-error_printer(s) => "0/14"
+# s="aaabbbbhaijjjm"
+# error_printer(s) => "0/14"
 
-s="aaaxbbbbyyhwawiwjjjwwm"
-error_printer(s) => "8/22"
-
-a-m = good
-n-z = bad
+# s="aaaxbbbbyyhwawiwjjjwwm"
+# error_printer(s) => "8/22"
 
 def printer_error(str)
-  bad = ('n'..'z')
-  if str includes? bad, errors_count = str(bad).count
-    print errors_count} + "/" str.length}
+  bad = /[n - z]/
+  errors_count = str.downcase.scan(bad).count
+  if errors_count > 0
+    return errors_count + "/" + str.length
   else
-    print "0/" + str.length
+    return "0/" + str.length
   end
-
 end
+
+printer_error("aaddddtttpwaaa")
