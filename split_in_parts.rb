@@ -7,5 +7,5 @@
 
 
 def split_in_parts (s, part_length)
-  s.slice(part_length)
+  s.insert(part_length, " ")
 end
