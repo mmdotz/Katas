@@ -1,6 +1,6 @@
 def validate(message)
   if
-    /[MDZHB]\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s(\d{2})\s(\d{2})\s(d{2})\s(\d{2})/.match(message)
+    /[MDZHB]\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s((\d{2}\s){3})(\d{2})/.match(message)
     puts true
  else
     puts false
