@@ -1,13 +1,19 @@
 def validate(message)
   if
-  /[MDZHB]\s+(\d{2})\s+(\d{3})\s+*[A-Z]\s+(\d{2})\s+(\d{2})\s+(d{2})\s+(\d{2})/.match(message)
-  else
-    false
+    /[MDZHB]\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s(\d{2})\s(\d{2})\s(d{2})\s(\d{2})/.match(message)
+    puts true
+ else
+    puts false
   end
 end
 
 
-message = "MDZHB 80 516 GANOMATIT 21 23 86 25"
+validate("MDZHB 80 516 GANOMATIT 21 23 86 25")
+validate("MZHB 80 516 GANOMATIT 21 23 86 25")
+
+
+
+
 =begin
 In Russia, there is an army-purposed station named UVB-76 or "Buzzer"
 (see also https://en.wikipedia.org/wiki/UVB-76). Most of time specific "buzz"
