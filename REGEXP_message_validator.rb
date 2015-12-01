@@ -1,6 +1,6 @@
 def validate(message)
   if
-    /[MDZHB]\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s((\d{2}\s){3})(\d{2})/.match(message)
+    /MDZHB\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s((\d{2}\s){3})(\d{2})/.match(message)
     puts true
  else
     puts false
@@ -8,8 +8,17 @@ def validate(message)
 end
 
 
-validate("MDZHB 80 516 GANOMATIT 21 23 86 25")
-validate("MZHB 80 516 GANOMATIT 21 23 86 25")
+puts "a"
+validate("MDZHB 80 516 GANOMATIT 21 23 86 25")  #true
+validate("MZHB 80 516 GANOMATIT 21 23 86 25") #f
+validate("MDZHB 8 516 GANOMATIT 21 23 86 25") #f
+validate("MDZHB 80 51 GANOMATI 21 23 86 25") #f
+validate("MDZHB 80 516 GANOMATIT 2 23 86 25") #
+puts "a" 
+validate("MDZHB 80 516 GA 21 23 86 25") #t
+validate("MDZHB 80 516 GANOMATIT 21 23 86") #f
+
+
 
 
 
