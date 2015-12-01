@@ -6,6 +6,11 @@
 # Size is always positive
 
 
-def split_in_parts (s, part_length)
-  s.insert(part_length, " ")
+def split_in_parts (string, part_length)
 end
+
+
+
+#tried insert " ", 3 but that only adds it after the first 3 chars, iterating adds a space AFTER the first space created
+#partition doesn't work
+#split and slice don't work
