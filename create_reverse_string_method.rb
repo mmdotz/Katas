@@ -9,4 +9,22 @@ def reverse(string)
   puts @string
 end
 
-reverse("Michelle")  #returns reversed string separated by char in array
+reverse("Michelle")
+reverse("I love code")
+
+#refactored, no not working
+# def reverse2(string)
+#   string.downto(0) { |n| print n }
+# end
+
+# reverse2("Jayson")
+
+def reverse3(string)
+  new_string = ""
+  (string.length-1).downto(0) do |n|
+    new_string += string[n]
+  end
+  puts new_string
+end
+
+reverse3("Annika")
