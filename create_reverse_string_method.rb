@@ -11,4 +11,4 @@
 #
 # string = String.create("Michelle")
 # string.reverse
-reverse("Michelle")
+puts reverse("Michelle")
