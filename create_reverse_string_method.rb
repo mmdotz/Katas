@@ -1,13 +1,14 @@
-class String
-  def reverse
-    self = self.chars  #array
-    reversed_string = []
-    number_of_chars = self.count
-    number_of_chars.times do |char|
-      reversed_string << self.pop
+  def reverse(string)
+    string = string.chars  #array
+    @reversed_string = []
+    number_of_chars = string.count
+    number_of_chars.times do |chars|
+      @reversed_string << string.pop
+      string
     end
+    @reversed_string.to_s
   end
-end
-
-string = String.create("Michelle")
-string.reverse
+#
+# string = String.create("Michelle")
+# string.reverse
+reverse("Michelle")
