@@ -10,8 +10,8 @@ def split_in_parts (string, part_length)
   @new_string =''                              # => ""
   number_of_loops = string.length/part_length  # => 4
   number_of_loops.times do                     # => 4
-  range = n..n+part_length                     # => 0..2, 2..4, 4..6, 6..8
-    @new_string +=string[range]+"\s"           # => "Mic ", "Mic che ", "Mic che ell ", "Mic che ell le "
+  range = n..n+part_length-1                   # => 0..1, 2..3, 4..5, 6..7
+    @new_string +=string[range]+"\s"           # => "Mi ", "Mi ch ", "Mi ch el ", "Mi ch el le "
     n +=part_length                            # => 2, 4, 6, 8
   end                                          # => 4
   puts @new_string                             # => nil
@@ -25,4 +25,4 @@ split_in_parts("Michelle", 2)  # => nil
 #partition doesn't work
 #split and slice don't work
 
-# >> Mic che ell le
+# >> Mi ch el le
