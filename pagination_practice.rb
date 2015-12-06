@@ -14,12 +14,34 @@
 # In a category of 8 products with 10 products per page, on page 1 you would see
 # 'Showing 1 to 8 of 8 Products.'
 
+#did not pass all tests
 def pagination_text(page_number, page_size, total_products)
   ending_number = page_size * page_number
   starting_number = ending_number - page_size + 1
-  print "Showing #{starting_number} to #{ending_number} of #{total_products}."
+  puts "Showing #{starting_number} to #{ending_number} of #{total_products} Products."
+end
+
+#attempt 2
+def pagination_text2(page_number, page_size, total_products)
+  #set starting_number
+  if page_number = 1
+    starting_number = 1
+  else
+    starting_number = (page_number * page_size) + 1
+  end
+  #set ending_number
+  if page_number > total_products
+    ending_number = total_products
+  else
+    ending_number = page_size + 1
+  end
+  puts "Showing #{starting_number} to #{ending_number} of #{total_products} Products."
 end
 
 pagination_text(3, 10, 60)
+pagination_text(43,15,3456)
+pagination_text(3,10,26)
 
-pagination_text(43,15,3456) # "Showing 631 to 645 of 3456 Products."
+pagination_text2(3, 10, 60)
+pagination_text2(43,15,3456)
+pagination_text2(2,10,26)
