@@ -6,14 +6,15 @@
 # Size is always positive
 
 def split_in_parts (string, part_length)
-  n = 0                                            # => 0
-  @new_string =''                                  # => ""
-  number_of_loops = string.length/part_length      # => 4
-  number_of_loops.times do                         # => 4
-    @new_string << string[n..part_length-1]+"\s_"  # => "Mi _", "Mi _ _", "Mi _ _ _", "Mi _ _ _ _"
-    n +=part_length                                # => 2, 4, 6, 8
-  end                                              # => 4
-  puts @new_string                                 # => nil
+  n = 0                                        # => 0
+  @new_string =''                              # => ""
+  number_of_loops = string.length/part_length  # => 4
+  number_of_loops.times do                     # => 4
+  range = n..n+part_length                     # => 0..2, 2..4, 4..6, 6..8
+    @new_string +=string[range]+"\s"           # => "Mic ", "Mic che ", "Mic che ell ", "Mic che ell le "
+    n +=part_length                            # => 2, 4, 6, 8
+  end                                          # => 4
+  puts @new_string                             # => nil
 end
 
 split_in_parts("Michelle", 2)  # => nil
@@ -24,4 +25,4 @@ split_in_parts("Michelle", 2)  # => nil
 #partition doesn't work
 #split and slice don't work
 
-# >> Mi _ _ _ _
+# >> Mic che ell le
