@@ -8,16 +8,16 @@
 def split_in_parts (string, part_length)
   n = 0                                        # => 0
   @new_string =''                              # => ""
-  number_of_loops = string.length/part_length  # => 4
+  number_of_loops = (string.length/part_length)+1  # => 4
   number_of_loops.times do                     # => 4
-  range = n..n+part_length-1                   # => 0..1, 2..3, 4..5, 6..7
-    @new_string +=string[range]+"\s"           # => "Mi ", "Mi ch ", "Mi ch el ", "Mi ch el le "
-    n +=part_length                            # => 2, 4, 6, 8
+  range = n..n+part_length-1                   # => 0..5, 6..11, 12..17, 18..23
+    @new_string +=string[range]+"\s"           # => "Michel ", "Michel le Mon ", "Michel le Mon iz Dot ", "Michel le Mon iz Dot zenrod "
+    n +=part_length                            # => 6, 12, 18, 24
   end                                          # => 4
-  puts @new_string                             # => nil
+  puts @new_string.rstrip                      # => nil
 end
 
-split_in_parts("Michelle", 2)  # => nil
+split_in_parts("Michelle Moniz Dotzenrod", 6)  # => nil
 
 
 
@@ -25,4 +25,4 @@ split_in_parts("Michelle", 2)  # => nil
 #partition doesn't work
 #split and slice don't work
 
-# >> Mi ch el le
+# >> Michel le Mon iz Dot zenrod
