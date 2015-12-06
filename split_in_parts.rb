@@ -5,9 +5,15 @@
 # String has no spaces
 # Size is always positive
 
-
+string = "Michelle"
+part_length = 3
 def split_in_parts (string, part_length)
+  new_string = string[0..part_length-1]+"\s"
+  print string
+  puts new_string
 end
+
+split_in_parts("Michelle", 3)
 
 
 
