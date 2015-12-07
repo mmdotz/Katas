@@ -10,11 +10,11 @@
 
 def most_frequent_item_count(collection)
   if collection.empty?
-    print "nil"
+    puts "nil"
   else
     new_hash = collection.group_by(&:itself)
+    print new_hash.sort_by(&:count)
   end
-  puts new_hash
 end
 
 most_frequent_item_count([8])                   # => nil
