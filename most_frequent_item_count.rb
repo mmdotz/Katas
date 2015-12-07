@@ -13,7 +13,7 @@ def most_frequent_item_count(collection)
     puts "nil"
   else
     new_hash = collection.group_by(&:itself)
-    print new_hash.sort_by(&:count)
+    new_hash.each_value {|value| puts value.count }
   end
 end
 
