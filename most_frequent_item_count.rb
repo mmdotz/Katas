@@ -9,10 +9,12 @@
 # Most frequent number in example array is -1. It occures 5 times in input array.
 
 def most_frequent_item_count(collection)
-  for n in collection
-    n.count
+  if collection.empty?                    # => true, false
+    return nil
+    else
   end
 end
 
-most_frequent_item_count([3,4,4,4,6,-1,0,5,4])
+most_frequent_item_count([])                    # => nil
+most_frequent_item_count([3,4,4,4,6,-1,0,5,4])  # => nil
 # most frequent item is 4, it appears 4 times
