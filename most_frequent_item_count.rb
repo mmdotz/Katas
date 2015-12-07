@@ -1,4 +1,4 @@
-# Write a JavaScript program to find count of the most frequent item of an array.
+# Write a program to find count of the most frequent item of an array.
 
 # Assume that input is array of integers.
 
@@ -9,17 +9,18 @@
 # Most frequent number in example array is -1. It occures 5 times in input array.
 
 def most_frequent_item_count(collection)
-  if collection.empty?
-    puts "nil"
+  if collection.empty?                                         # => false, true, false
+    nil                                                # => nil
   else
-    new_hash = collection.group_by(&:itself)
-    new_hash.each_value {|value| puts value.count }
-  end
+    most_frequent = collection.group_by(&:itself).values.max_by(&:size)  # => 8, 4
+    return most_frequent.count
+  end                                                          # => 8, nil, 4
 end
 
-most_frequent_item_count([8])                   # => nil
+most_frequent_item_count([8])                   # => 8
 most_frequent_item_count([])                    # => nil
-most_frequent_item_count([3,4,4,4,6,-1,0,5,4])  # => nil
+most_frequent_item_count([3,4,4,4,6,-1,0,5,4])  # => 4
 # most frequent item is 4, it appears 4 times
 
 
+# >> nil
