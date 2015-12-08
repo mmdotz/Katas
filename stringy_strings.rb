@@ -7,7 +7,7 @@
 # The size will always be positive and will only use whole numbers.
 
 def stringy(size)
-  string = "10" * (size.to_f/2.round)
+  string = "10" * (size.to_f/2).round
   if size.even?
     puts string
   else
