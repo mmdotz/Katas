@@ -9,18 +9,26 @@
 # Most frequent number in example array is -1. It occures 5 times in input array.
 
 def most_frequent_item_count(collection)
-  if collection.empty?                                         # => false, true, false
-    nil                                                # => nil
+  if collection.empty?                                                   # => false, true, false, false
+     nil                                                                 # => nil
   else
-    most_frequent = collection.group_by(&:itself).values.max_by(&:size)  # => 8, 4
-    return most_frequent.count
-  end                                                          # => 8, nil, 4
+    most_frequent = collection.group_by(&:itself).values.max_by(&:size)  # => [8], [-3, -3], [0]
+    return most_frequent.count                                           # => 1, 2, 1
+  end
 end
 
-most_frequent_item_count([8])                   # => 8
-most_frequent_item_count([])                    # => nil
-most_frequent_item_count([3,4,4,4,6,-1,0,5,4])  # => 4
+most_frequent_item_count([8])                                               # => 1
+most_frequent_item_count([])                                                # => nil
+most_frequent_item_count([ -11,-1,1,9,-3,-15,-6,-7,-3,13,4,5,10,13,-9,-7])  # => 2
+most_frequent_item_count([0])                                               # => 1
 # most frequent item is 4, it appears 4 times
 
 
-# >> nil
+def most_frequent_item_count(collection)
+  if collection.empty?
+    nil
+  else
+    most_frequent = collection.group_by(&:itself).values.max_by(&:size)
+    return most_frequent.count
+  end
+end

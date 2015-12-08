@@ -7,12 +7,12 @@
 # The size will always be positive and will only use whole numbers.
 
 def stringy(size)
- if size.even?
-    puts "10" * (size/2)
+  string = "10" * (size/2)
+  if size.even?
+    puts string
   else
-    puts "?"
+    puts string.chop
   end
-  # return string
 end
 
 stringy(9)
