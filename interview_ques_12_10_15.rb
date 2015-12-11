@@ -24,3 +24,19 @@ end
 
 match_case("Michelle")
 match_case("dOtz")
+
+#Having a User model and a Sessions controller, when a user_id is set as the
+#current_user, create an instance of a new IP address
+
+#I created a model called IpAddress which had a PK, FK for user_id and address
+#belongs_to :User
+#dependent: :destroy
+
+#upon clicking login, a REQUEST object is created, from which request.ip comes
+
+def log_in_user
+  set_ip = IpAddress.create({
+    address: request.ip
+    user_id: current_user
+    })
+end
