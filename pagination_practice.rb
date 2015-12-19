@@ -15,13 +15,23 @@
 # 'Showing 1 to 8 of 8 Products.'
 
 def pagination_text(page_number, page_size, total_products)
-  if page_number = 1
-    starting_number = 1
-    ending_number = page_size
-  else
-    starting_number = (page_number * page_size) + 1
-  end
 
+  if page_size > total_products
+    ending_number = total_products
+    if page_number == 1
+      starting_number = page_number
+    else
+      starting_number = (page_size/page_number) + 1
+    end
+  else (page_size < total_products)
+    if page_number == 1
+      starting_number = page_number
+      ending_number = page_size
+    else
+      starting_number = ((page_number - 1) * page_size) + 1
+      ending_number = page_size * page_number
+    end
+  end
 
   puts "Showing #{starting_number} to #{ending_number} of #{total_products} Products."
 end
