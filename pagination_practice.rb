@@ -16,14 +16,14 @@
 
 def pagination_text(page_number, page_size, total_products)
 
-  if page_size > total_products
+  if total_products/page_size < page_number
     ending_number = total_products
     if page_number == 1
       starting_number = page_number
     else
-      starting_number = (page_size/page_number) + 1
+      starting_number = ((page_number - 1) * page_size) + 1
     end
-  else (page_size < total_products)
+  else
     if page_number == 1
       starting_number = page_number
       ending_number = page_size
@@ -35,7 +35,6 @@ def pagination_text(page_number, page_size, total_products)
 
   puts "Showing #{starting_number} to #{ending_number} of #{total_products} Products."
 end
-
 pagination_text(3, 10, 60)
 pagination_text(43,15,3456)
 pagination_text(3,10,26)
