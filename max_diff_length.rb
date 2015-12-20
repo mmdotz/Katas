@@ -5,15 +5,26 @@
 
 # If a1 or a2 are empty return -1
 
+
+# a2 = []
+# a1 =[]
+
+
 a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
 a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
 # mxdiflg(a1, a2) --> 13
 
 def mxdiflg(a1, a2)
   if a1.empty? || a2.empty?
-    return -1
+    puts -1  # change to return for codewars
   else
-
+    @a1 = a1.map do |string|
+      string.size
+    end
+    @a2 = a2.map do |string|
+      string.size
+    end
+    print @a1, @a2
   end
 end
 
