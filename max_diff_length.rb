@@ -26,10 +26,20 @@ def mxdiflg(a1, a2)
     end
     first = first_ary.sort.uniq # delete duplicates from each
     second = sec_ary.sort.uniq
-    # result = {}
-    print first, second
+    max = [first.size, second.size].max
+    print first, second, max
+    result = []
+    x = 0
+    max.times do
+      result << (first[x] - second[x])
+      x+=1
+    end
+
+    print result
+
   end
 end
+
 
 
 mxdiflg(a1, a2)
