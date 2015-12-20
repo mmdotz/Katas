@@ -18,13 +18,16 @@ def mxdiflg(a1, a2)
   if a1.empty? || a2.empty?
     puts -1  # change to return for codewars
   else
-    @a1 = a1.map do |string|
+    first_ary = a1.map do |string|
       string.size
     end
-    @a2 = a2.map do |string|
+    sec_ary = a2.map do |string|
       string.size
     end
-    print @a1, @a2
+    first = first_ary.sort.uniq # delete duplicates from each
+    second = sec_ary.sort.uniq
+    # result = {}
+    print first, second
   end
 end
 
