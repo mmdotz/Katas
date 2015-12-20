@@ -24,22 +24,11 @@ def mxdiflg(a1, a2)
     sec_ary = a2.map do |string|
       string.size
     end
-    first = first_ary.sort.uniq # delete duplicates from each
+    first = first_ary.sort.uniq
     second = sec_ary.sort.uniq
-    max = [first.size, second.size].max
-    print first, second, max
-    result = []
-    x = 0
-    max.times do
-      result << (first[x] - second[x])
-      x+=1
-    end
-
-    print result
-
+    [first].zip([second]) {|a,b| print a - b}
   end
 end
-
 
 
 mxdiflg(a1, a2)
