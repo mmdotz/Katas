@@ -26,8 +26,17 @@ def mxdiflg(a1, a2)
     end
     first = first_ary.sort.uniq
     second = sec_ary.sort.uniq
-    reply = [first].zip([second]) {|a,b| print (a - b).abs} #there are nils that need to be removed
-    print reply.max
+    puts first.size, second.size
+    puts "First:\t #{first}" , "second: #{second}"
+    reply = first.zip(second)
+    print "zipped: #{reply}"
+
+
+   #only works when the zipped array is shorter than the argument
+   # .compact to get rid of nils?
+   # call .abs on array to return absolut value
+   # first.zip(second).map { |a, b| a- b}
+   #  => [-5, -5, -5]
   end
 end
 
