@@ -7,7 +7,7 @@
 
 
 # a2 = []
-# a1 =[]
+# a1 = []
 
 
 a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
@@ -26,7 +26,8 @@ def mxdiflg(a1, a2)
     end
     first = first_ary.sort.uniq
     second = sec_ary.sort.uniq
-    [first].zip([second]) {|a,b| print a - b}
+    reply = [first].zip([second]) {|a,b| print (a - b).abs} #there are nils that need to be removed
+    print reply.max
   end
 end
 
