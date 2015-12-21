@@ -16,7 +16,7 @@ a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
 
 def mxdiflg(a1, a2)
   if a1.empty? || a2.empty?
-    puts -1  # change to return for codewars
+    return -1  # change to return for codewars
   else
     first_ary = a1.map do |string|
       string.size
@@ -24,19 +24,7 @@ def mxdiflg(a1, a2)
     sec_ary = a2.map do |string|
       string.size
     end
-    first = first_ary.sort.uniq
-    second = sec_ary.sort.uniq
-    puts first.size, second.size
-    puts "First:\t #{first}" , "second: #{second}"
-    reply = first.zip(second)
-    print "zipped: #{reply}"
-
-
-   #only works when the zipped array is shorter than the argument
-   # .compact to get rid of nils?
-   # call .abs on array to return absolut value
-   # first.zip(second).map { |a, b| a- b}
-   #  => [-5, -5, -5]
+    return (first_ary.min - sec_ary.max).abs
   end
 end
 
