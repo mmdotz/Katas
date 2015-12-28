@@ -15,3 +15,16 @@ def fizzbuzz(max)
 end
 
 fizzbuzz(124)
+sleep(3)
+def fizzbuzz(max)
+  puts "Alt Fizzbuzz"
+  1.upto(max).each do |n|
+    line = ''
+    line << 'Fizz' if n % 3 == 0
+    line << 'Buzz' if n % 5 == 0
+    line = n if line.empty?
+    p line
+  end
+end
+
+fizzbuzz(78)
