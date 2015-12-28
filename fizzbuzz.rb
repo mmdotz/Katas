@@ -16,6 +16,7 @@ end
 
 fizzbuzz(124)
 sleep(3)
+
 def fizzbuzz(max)
   puts "Alt Fizzbuzz"
   1.upto(max).each do |n|
