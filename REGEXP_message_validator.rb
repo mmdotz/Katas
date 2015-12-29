@@ -1,23 +1,25 @@
 def validate(message)
   if
-    /MDZHB\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s((\d{2}\s){3})(\d{2})/.match(message)
-    puts true
+    /MDZHB\s(\d{2})\s(\d{3})\s([A-Z]{1,})\s((\d{2}\s){3})(\d{2}$)/.match(message)  # => #<MatchData "MDZHB 80 516 GANOMATIT 21 23 86 25" 1:"80" 2:"516" 3:"GANOMATIT" 4:"21 23 86 " 5:"86 " 6:"25">, nil, nil, nil, nil, #<MatchData "MDZHB 80 516 GA 21 23 86 25" 1:"80" 2:"516" 3:"GA" 4:"21 23 86 " 5:"86 " 6:"25">, nil, #<MatchData "MDZHB 12 733 VOSKHOD 67 79 66 32" 1:"12" 2:"733" 3:"VOSKHOD" 4:"67 79 66 " 5:"66 " 6:"32">
+    puts true                                                                     # => nil, nil, nil
  else
-    puts false
-  end
+    puts false                                                                    # => nil, nil, nil, nil, nil
+  end                                                                             # => nil, nil, nil, nil, nil, nil, nil, nil
 end
 
 
-puts "a"
 validate("MDZHB 80 516 GANOMATIT 21 23 86 25")  #true
 validate("MZHB 80 516 GANOMATIT 21 23 86 25") #f
 validate("MDZHB 8 516 GANOMATIT 21 23 86 25") #f
 validate("MDZHB 80 51 GANOMATI 21 23 86 25") #f
 validate("MDZHB 80 516 GANOMATIT 2 23 86 25") #
-puts "a" 
 validate("MDZHB 80 516 GA 21 23 86 25") #t
 validate("MDZHB 80 516 GANOMATIT 21 23 86") #f
 
+#not passing
+print "not passing:"
+validate("MDZHB 12 733 VOSKHOD 67 79 66 322")  # => nil
+# Expected: false, instead got: "MDZHB 12 733 VOSKHOD 67 79 66 322"
 
 
 
@@ -46,3 +48,14 @@ Your task is to write a function that can validate the correct UVB-76 message.
 Function should return "True" if message is in correct format and
 "False" otherwise.
 =end
+
+# >> a
+# >> true
+# >> false
+# >> false
+# >> false
+# >> false
+# >> a
+# >> true
+# >> false
+# >> true
