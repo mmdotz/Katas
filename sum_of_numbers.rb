@@ -4,7 +4,11 @@
 # Note! a and b are not ordered!
 
 def get_sum(a,b)
-  range = (a..b).to_a.sort
+  if b > a
+    range = (a..b).to_a
+  else
+    range = (b..a).to_a
+  end
   puts range.inject(:+)
 end
 #
@@ -16,4 +20,4 @@ end
 # get_sum(-1, 0) == -1 # -1 + 0 = -1
 # get_sum(-1, 2) == 2  # -1 + 0 + 1 + 2 = 2
 get_sum(-1,3)
-get_sum(3, -1)
+get_sum(12, -1)
