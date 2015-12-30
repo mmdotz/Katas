@@ -5,11 +5,11 @@
 
 def get_sum(a,b)
   if b > a
-    range = (a..b).to_a
+    range = (a..b).to_a.inject(:+)
   else
-    range = (b..a).to_a
+    range = (b..a).to_a.inject(:+)
   end
-  puts range.inject(:+)
+  puts range
 end
 #
 #
