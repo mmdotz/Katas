@@ -13,8 +13,18 @@
 findNb(1071225) # n = 45
 findNb(91716553919377) # -1
 findNb(90)
+#
+# notes:
+# if n = 5, then "pile" volume "m" should equal (5)^3 + (5-1)^3 + (4-1)^3 + (3-1)^3 + (2-1)^3
+#   m = 125 + 64 + 27 + 8 + 1
+#   m = 225
 
-def find_nb(m)
-
-
+def test_find_volume_m(number_of_cubes)
+  array_of_cubed_ns = []
+  number_of_cubes.times do |n|
+    array_of_cubed_ns << n**3
+    n-=
+  end
+  m = array_of_cubed_ns.inject(:+)
+  print m
 end
