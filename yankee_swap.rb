@@ -5,7 +5,8 @@ sleep(2)
 
 def yank_swap
   n = 1
-  names = ["Brendan", "Ian", "Chloe", "Joanne", "Steve", "Michelle", "Jay", "Mom", "Dad", "Annika", "Charlie"].shuffle
+  names = ["Joanne", "Ian", "Steve", "Michelle", "Jay", "Mom", "Dad"].shuffle
+  # names = ["Brendan", "Ian", "Chloe", "Annika", "Charlie"].shuffle
   names.each do |name|
     puts "#{n}. #{name}"
     n+=1
@@ -20,7 +21,3 @@ def yank_swap
 end
 
 yank_swap
-
-
-
-

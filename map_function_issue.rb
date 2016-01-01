@@ -19,19 +19,32 @@
 # map([1,2,3,4],func); // calling the map function
 # [ false, true, false, true ] // returned result
 
-# Second argument of map function must be function, so it should be validated and give string 'given argument is not a function' in case the argument is not a function. If array contains not numbers it returns string 'array should contain only numbers'. So make sure all elements of the array are numbers.
+# Second argument of map function must be function, so it should be validated and give string
+# 'given argument is not a function' in case the argument is not a function. If array contains
+# not numbers it returns string 'array should contain only numbers'. So make sure all elements of the array are numbers.
+
+func = def validation
+  puts "given argument is not a function" unless false
+end
+
+
 
 def map(array, func)
+  if (defined? func).nil?
+    validation
+  end
   array.each do |n|
     n = 0
     @mapped_array = []
     if array[n].even?
       @mapped_array << true
-    else
+    elsif array[n].odd?
       @mapped_array << false
+    else
+      puts "Array should conatin only integers." #not 'numbers' as requested
     end
     n+=1
-    print @mapped_array
+    print @mapped_array #return
   end
 end
 
