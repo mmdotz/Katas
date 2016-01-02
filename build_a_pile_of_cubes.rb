@@ -24,7 +24,7 @@ def test_find_volume_m(number_of_cubes)
   print m                                # => nil
 end
 
-test_find_volume_m(5)  # => nil
+# test_find_volume_m(5)  # => nil
 # >> 225
 
 # hmm Math.cbrt(x)??
@@ -39,11 +39,12 @@ def find_number_of_cubes_in_building(m)
   array_of_cubed_ns = [n]
   until array_of_cubed_ns.inject(:+) == m
     array_of_cubed_ns << (n+1)**3
+    n+=1
   end
   print n
 end
 
-
+find_number_of_cubes_in_building(1071225)
 
 
 
