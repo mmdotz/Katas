@@ -27,24 +27,25 @@ end
 # test_find_volume_m(5)  # => nil
 # >> 225
 
-# hmm Math.cbrt(x)??
-
-# findNb(1071225) # n = 45
-# findNb(91716553919377) # -1
-# findNb(90)
-
-
 def find_number_of_cubes_in_building(m)
-  n = 1
-  array_of_cubed_ns = [n]
-  until array_of_cubed_ns.inject(:+) == m
-    array_of_cubed_ns << (n+1)**3
-    n+=1
+  if (m % 3).zero?
+    n = 1
+    array_of_cubed_ns = [n]
+    until array_of_cubed_ns.inject(:+) == m
+      array_of_cubed_ns << (n+1)**3
+      n+=1
+    end
+    puts n
+  else
+    puts -1
   end
-  print n
 end
 
 find_number_of_cubes_in_building(1071225)
+find_number_of_cubes_in_building(4183059834009)
+find_number_of_cubes_in_building(24723578342962) #need to add break and return -1 for no such n
+find_number_of_cubes_in_building(91716553919377) # -1
+
 
 
 
