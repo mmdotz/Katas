@@ -21,14 +21,14 @@ def test_find_volume_m(number_of_cubes)
     number_of_cubes-=1                   # => 4, 3, 2, 1, 0
   end                                    # => 5
   m = array_of_cubed_ns.inject(:+)       # => 225
-  print m                                # => nil
+  return m                                # => nil
 end
 
 # test_find_volume_m(5)  # => nil
 # >> 225
 
 def find_number_of_cubes_in_building(m)
-  if (m % 3).zero?
+  if (Math.sqrt(m) % 1).zero?  #if the sqrt of m has remainder, then -1
     n = 1
     array_of_cubed_ns = [n]
     until array_of_cubed_ns.inject(:+) == m
@@ -41,11 +41,13 @@ def find_number_of_cubes_in_building(m)
   end
 end
 
-find_number_of_cubes_in_building(1071225)
-find_number_of_cubes_in_building(4183059834009)
-find_number_of_cubes_in_building(24723578342962) #need to add break and return -1 for no such n
-find_number_of_cubes_in_building(91716553919377) # -1
+find_number_of_cubes_in_building(1071225)       # 45
+find_number_of_cubes_in_building(4183059834009) # 2022
+find_number_of_cubes_in_building(24723578342962)# -1
 
+find_number_of_cubes_in_building(91716553919378) # -1
+find_number_of_cubes_in_building(40539911473216) # -1 not passing, should return 3568
+find_number_of_cubes_in_building(1)              # -1 not passing, should return 1
 
 
 
