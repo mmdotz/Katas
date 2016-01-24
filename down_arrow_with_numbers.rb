@@ -9,8 +9,11 @@
 #     1
 
 def get_a_down_arrow_of(v)
-  1.upto(v) { |x| print x } && v.downto(1) { |x| print x }
-  puts "\n"
+  while v >= 1
+    1.upto(v-1) { |x| print x  } && v.downto(1) { |x| print x }
+    puts "\n"
+    v -=1
+  end
 end
 
 get_a_down_arrow_of(10)
