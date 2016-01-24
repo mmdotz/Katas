@@ -13,9 +13,11 @@
 # 35235235  ->  "35,235,235"
 
 def solution(n)
-  if n.size > 3 && n < 1000000000
-    n = n.to_s
-    n.insert(-4, ",")
+  n = n.to_s
+  if n.size > 3
+    n = n.insert(-4, ",")
+  elsif n.size > 3 && n.size < 7
+    n = n.insert(-8, ",")
   end
 
   puts n
