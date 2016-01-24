@@ -17,6 +17,14 @@ def solution(n)
   puts n.to_s.reverse.scan(/\d{1,3}/).join(',').reverse
 end
 
+#what's happening here:
+#12345 is converted to "12345"
+#reverse string => "54321"
+#scan breaks the string into 1-3 digit array => ["543", "21"]
+# then join them with commas => "543,21"
+# then reverse "12,345"
+
+#I was tripped up by the {1,3} -- was using {3,} for 3 or more, very tricky!
 
 solution(0)
 solution(12)
