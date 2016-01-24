@@ -11,19 +11,28 @@
 #   100000  ->     "100,000"
 #  1000000  ->   "1,000,000"
 # 35235235  ->  "35,235,235"
+#
+# def solution(n)
+#   n = n.to_s
+#   if n.size > 3 && n.size < 7
+#     n = n.insert(-8, ",")
+#   elsif n.size > 3
+#     n = n.insert(-4, ",")
+#   end
+#
+#   puts n
+# end
+
+#try regex next 
+
+
 
 def solution(n)
-  n = n.to_s
-  if n.size > 3
-    n = n.insert(-4, ",")
-  elsif n.size > 3 && n.size < 7
-    n = n.insert(-8, ",")
-  end
-
-  puts n
+  puts n.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
 end
-#
-# solution(0)
-# solution(12)
+
+
+solution(0)
+solution(12)
 solution(12345)
 solution(999999999)
