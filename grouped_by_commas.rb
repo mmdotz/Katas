@@ -13,14 +13,15 @@
 # 35235235  ->  "35,235,235"
 
 def solution(n)
-  if n.count > 3
-    #add commas
-    
+  if n.size > 3 && n < 1000000000
+    n = n.to_s
+    n.insert(-4, ",")
   end
 
-  puts n.to_s
+  puts n
 end
-
-solution(0)
-solution(12)
+#
+# solution(0)
+# solution(12)
 solution(12345)
+solution(999999999)
