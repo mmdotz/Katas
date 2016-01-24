@@ -8,7 +8,7 @@
 def validate_code(n)
   #starts with regex [1-3]
   n = n.to_s
-  if /[1-3]/.match(n)
+  if /^[1-3]/.match(n)
     puts true
   else
     puts false
