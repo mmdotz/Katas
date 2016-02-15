@@ -15,8 +15,12 @@
 
 # Slice the time argument's whitespace and am or pm off the end and assign to a variable ampm to concat later
 # Split the time argument at the colon, save integers as variable time
-# Subarray array into hours and minutes
 # add min_to_add to minutes, assign to variable new_time
+# interpolate and concat variables for return
+
+# edge cases
+# change am to pm or pm to am if hour passes through midday or midnight
+# if min_to_add is greater than X, add Y to hour
 
 def add_minutes(time, min_to_add)
   ampm = time.slice!(-3..-1)                           #=> " am"
@@ -34,4 +38,10 @@ end
 add_minutes('9:13 am', 10)  #=> 9:23 am
 add_minutes('11:55 am', 10) #=> 12:05 pm
 add_minutes('11:55 pm', 10) #=> 12:05 am
-add_minutes('1:23 pm', 90) #=>
+add_minutes('1:23 pm', 90)
+
+#todo:
+# 1. format with Strftime so the minutes are two whole places (05 prints as 5)
+# 2. address all cases where adding minutes changed the portion of day from/to am/pm
+# 3. If min_to_add are greater than X, subtracting 60 minutes as it stands won't return correct tim format (59 minutes or less)
+# 4. add logic for time argument in military format
