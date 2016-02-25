@@ -30,15 +30,12 @@ class NumberSequenceTest < Minitest::Test
 
   def test_for_even_n
     sequence = Sequence.new.sequence_of_numbers(4)
-    assert_equal([2], sequence)
+    assert_equal([4, 2, 1], sequence)
   end
 
   def test_for_odd_n
     sequence = Sequence.new.sequence_of_numbers(3)
-    assert_equal([10], sequence)
+    assert_equal([3, 10, 5, 16, 8, 4, 2, 1], sequence)
   end
-
-
-
 
 end
