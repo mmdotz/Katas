@@ -38,10 +38,12 @@ end
 add_minutes('9:13 am', 10)  #=> 9:23 am
 add_minutes('11:55 am', 10) #=> 12:05 pm
 add_minutes('11:55 pm', 10) #=> 12:05 am
-add_minutes('1:23 pm', 90)
+add_minutes('1:23 pm', 90) #=> 2:53pm
 
 #todo:
-# 1. format with Strftime so the minutes are two whole places (05 prints as 5)
+# 1. format with Strftime so the minutes are two whole places (05 prints as 5) try %r
 # 2. address all cases where adding minutes changed the portion of day from/to am/pm
 # 3. If min_to_add are greater than X, subtracting 60 minutes as it stands won't return correct tim format (59 minutes or less)
 # 4. add logic for time argument in military format
+# 5. error handling for nil arguments
+# 6. explore override operators

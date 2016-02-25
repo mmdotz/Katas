@@ -9,4 +9,10 @@ class AddMinutesTest < Minitest::Test
     assert(TimeChanger)
   end
 
+  def test_parse_time_string
+    @time       = "9:34 am"
+    new_time = TimeChanger.new.parse_time_string(@time)
+    assert_equal("09:34", new_time)
+  end
+
 end
