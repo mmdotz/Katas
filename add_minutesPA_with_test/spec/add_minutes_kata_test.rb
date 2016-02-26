@@ -10,9 +10,9 @@ class AddMinutesTest < Minitest::Test
   end
 
   def test_parse_time_string
-    time    = "9:34 am"
+    time    = "1:34 pm"
     new_time = TimeChanger.new.parse_time_string(time)
-    assert_equal("09:34", new_time)
+    assert_equal("13:34", new_time)
   end
 
   def test_split_time_string
