@@ -24,16 +24,16 @@ class TimeChanger
     @split_time = time.split(":").map{ |num| num.to_i }
   end
 
-  def self.add_minutes(min_to_add)
-    @split_time = [@split_time[0], @split_time[1] + @min_to_add]
+  def add_minutes(min_to_add, split_time)
+    @split_time = [split_time[0], split_time[1] + @min_to_add]
     return @split_time
   end
 
-  def convert_minutes_greater_than_60
-    if @split_time[1] > 59
-      converted_time = [@split_time[0]+1, @split_time[1] - 60]
+  def convert_minutes_greater_than_60(split_time)
+    if split_time[1] > 59
+      converted_time = [split_time[0]+1, split_time[1] - 60]
     else
-      @split_time
+      split_time
     end
   end
 
