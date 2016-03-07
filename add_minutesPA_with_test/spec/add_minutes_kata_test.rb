@@ -28,9 +28,24 @@ class AddMinutesTest < Minitest::Test
   end
 
   def test_convert_minutes_greater_than_60
-    # skip
     split_time = [13, 75]
     assert_equal([14, 15], TimeChanger.new.convert_minutes_greater_than_60(split_time))
+  end
+
+  def test_convert_split_time_to_string
+    split_time = [14, 15]
+    assert_equal("14 15", TimeChanger.new.convert_split_time_to_string(split_time))
+  end
+
+
+  def test_add_am_or_pm(split_time)
+    skip
+    split_time = [14, 15]
+    if split_time[0] > 12
+      #add pm to string
+    else
+      #add am
+    end
   end
 
 end

@@ -10,10 +10,12 @@ class TimeChanger
     @min_to_add = 40
   end
 
-  # def add_minutes_to_time_string(time, min_to_add)
-  #   parse_time_string(time) # => for 1:35pm "13:35"
-  #   split_time_string(@time) # => [13, 35]
-  # end
+  def add_minutes_to_time_string(time, min_to_add)
+    parse_time_string(time) # => for 1:35pm "13:35"
+    split_time_string(@time) # => [13, 35]
+    add_minutes(min_to_add, @split_time)
+    convert_minutes_greater_than_60(@split_time)
+  end
 
   # string the methods below
   def parse_time_string(time)
@@ -37,7 +39,15 @@ class TimeChanger
     end
   end
 
+  # has to return split_time OR converted_time then
+  # add colon between, then convert to string
+  # use split_time.insert(1, ":") ??
+  # %w{"#{split_time}"} => returns escaped string
+
+  def convert_split_time_to_string(split_time)
+  end
 
 end
 
-print TimeChanger.new.split_time_string("9:30 am")
+print TimeChanger.new.add_minutes_to_time_string("9:30 am", 40)
+print TimeChanger.new.add_minutes_to_time_string("1:35 pm", 40)
