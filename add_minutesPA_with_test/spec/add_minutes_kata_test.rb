@@ -23,12 +23,12 @@ class AddMinutesTest < Minitest::Test
 
   def test_add_minutes
     split_time = [13, 35]
-    added_time = TimeChanger.new.add_minutes(split_time, 40)
+    added_time = TimeChanger.add_minutes(40)
     assert_equal([13, 75], added_time)
   end
 
   def test_convert_minutes_greater_than_60
-    # skip #add_minutes is failing so
+    skip #add_minutes is failing so
     assert_equal([14, 15], TimeChanger.new.convert_minutes_greater_than_60)
   end
 
