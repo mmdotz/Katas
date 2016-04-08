@@ -12,6 +12,15 @@ class Game
     @choices = ["rock", "paper","scissors"]
   end
 
+  def play_again
+    puts "Would you like to play again(y/n)?"
+    answer = gets.chomp.downcase
+    if answer == "y"
+      start_game
+    else
+      exit
+    end
+  end
 
   def start_game
     puts "Would you like to choose rock, paper, or scissors?"
@@ -19,13 +28,8 @@ class Game
     computer_choice = @choices.sample
 
     if computer_choice == user_choice
-      puts "You both chose #{user_choice}. It's a tie. Would you like to play again(y/n)?"
-      answer = gets.chomp.downcase
-      if answer == "y"
-        start_game
-      else
-        close
-      end
+      puts "You both chose #{user_choice}. It's a tie."
+      play_again
     end
 
     if user_choice == "rock"
@@ -50,7 +54,8 @@ class Game
         winner = computer_choice
       end
     end
-    puts "You chose #{user_choice} and the computer chose #{computer_choice}. #{winner} wins"
+    puts "You chose #{user_choice} and the computer chose #{computer_choice}. #{winner.capitalize} wins"
+    play_again
   end
 end
 
