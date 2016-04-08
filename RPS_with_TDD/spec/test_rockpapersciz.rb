@@ -19,4 +19,8 @@ class TestGame < Minitest::Unit::TestCase
     assert_output (/like/) {@game.start_game}
   end
 
+  def test_compare_choices
+  end
+
+
 end
