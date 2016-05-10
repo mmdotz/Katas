@@ -18,9 +18,11 @@ term = 1
 prev_term = 0
 sum = 0
 
-while sum < 4000000
+while sum < 400
   term+=1 if (term % 2).zero?
-  sum, prev_term = prev_term, prev_term + term
+  sum = prev_term + term
+  prev_term = term
+  puts sum
 end
 
 p sum
