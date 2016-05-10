@@ -14,15 +14,28 @@
 # The next number is found by adding up the two numbers before it.
 # The 2 is found by adding the two numbers before it (1+1)
 
-term = 1
-prev_term = 0
-sum = 0
 
-while sum < 400
-  term+=1 if (term % 2).zero?
-  sum = prev_term + term
-  prev_term = term
-  puts sum
+total = 0
+previous = 0
+i = 1
+
+while i < 400
+  total += i if (i % 2 == 0)
+  i, previous = previous, previous + i
 end
 
-p sum
+puts total
+
+def generate_Fib_seq_sum
+  sum = 0
+  prev_term = 0
+  term = 1
+  while term < 400
+    sum +=term if (term % 2).zero?
+    term = prev_term
+    prev_term = prev_term + term
+  end 
+  p sum
+end
+
+generate_Fib_seq_sum
