@@ -22,13 +22,21 @@ def generate_Fib_seq_sum
   term = 1
   sequence = []
   while sum < 4000000
-    sum +=term if term.even?
+    sum +=term if (term % 2).zero?
     term, prev_term = prev_term, prev_term + term
     sequence << term
   end
   puts sequence
-  p "The sum of a #{sequence.count} digit Fibonacci series = #{sum}"
+  p "The sum of a #{sequence.count} digit Fibonacci series is #{sum}"
 end
 
 generate_Fib_seq_sum
-#
+
+# # when sequence is known
+# seq = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887]
+# seq.each_with_index do |val, index|
+#   val + index[1]
+#   binding.pry
+#   term + prev_term if (term % 2).zero?
+#   (term, prev_term = prev_term, prev_term + term) unless prev_term.nil?
+# end
