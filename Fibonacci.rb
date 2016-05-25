@@ -14,19 +14,19 @@
 # The next number is found by adding up the two numbers before it.
 # The 2 is found by adding the two numbers before it (1+1)
 
-require 'pry'
 
 def generate_Fib_seq_sum
   sum = 0
   prev_term = 0
   term = 1
   sequence = []
-  while sum < 4000000
+  while sum <= 4000000
     sum +=term if (term % 2).zero?
     term, prev_term = prev_term, prev_term + term
-    sequence << term
+    sequence << term unless term > 4000000
   end
   puts sequence
+  puts sum
   p "The sum of a #{sequence.count} digit Fibonacci series is #{sum}"
 end
 
