@@ -1,0 +1,36 @@
+notes here:
+
+Was surprised to see "type" attribute for style as that's a reserved word in Rails as I have learned the hard way.
+Then found   self.inheritance_column = :_type_disabled in item.rb. Had to read about this. Wonder why type was important to use
+instead of rename to type_of.
+
+to do later: Read about BigDecimal
+
+X-- draw this flow chart
+draw the UML
+
+X-- add an items controller
+X-- add tests for items model
+
+TASK 1
+{{We're selling some items for less than we'd like, so we want to set a minimum price for items whose clearance discount is too low.
+For pants and dresses, ensure they don't sell for less than $5. For all other items the minimum price is $2.}}
+
+X-- styles have a minimum price: add conditional to clearance! (or callback before it saves) if price_sold is less than min_price...
+set price_sold to min_price
+
+using item = Item.last =>item is sellable, pants, clearance price less than min of 5
+
+set_final_price : update_attribute had arity problem, changed to update_attributes
+                : returning nil -- price_sold.to_i? used to_f
+                changed to to_i
+                needed to be update_attributes! ARGHHHH
+
+TASK 3
+Browse items
+The request is too large for Webrick. Installed Thin. Sure this could be refactored for the request is smaller.
+Create table for Item full list
+Tried adding a dropdwon menu to choose either grouping by status or batch but spent too much time and separated the actions into buttons
+<%= link_to "Home", root_path, class: 'btn btn-md btn-warning box-shadow--8dp' %>
+<%= link_to "See Items by Status", @items_by_status, class: 'btn btn-md btn-warning box-shadow--8dp' %>
+<%= link_to "See Items by Batch", @items_by_batch, class: 'btn btn-md btn-warning box-shadow--8dp' %>

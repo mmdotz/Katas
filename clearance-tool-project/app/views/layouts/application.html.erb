@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TakeHomeChallenge</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<br>
+<%= link_to "Home", root_path, class: 'btn btn-md btn-warning box-shadow--8dp' unless controller_name == "clearance_batches" %>
+
+<div class="container">
+
+  <h1>Clearance Tool</h1>
+  <%- if flash[:notice] -%>
+    <div class="alert alert-info" role="alert">
+      <%= flash[:notice].html_safe %>
+    </div>
+  <%- end -%>
+  <%- if flash[:alert] -%>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert].html_safe %>
+    </div>
+  <%- end -%>
+  <%= yield %>
+</div>
+
+</body>
+</html>

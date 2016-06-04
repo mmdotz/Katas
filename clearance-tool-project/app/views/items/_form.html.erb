@@ -1,0 +1,93 @@
+<!-- provide link to clearance the current batch
+can't call clearance! without HTTP action? -->
+
+<%= form_for(@batch_item) do |f| %>
+  <% if @batch_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@batch_item.errors.count, "error") %> prohibited this source from being saved:</h2>
+
+      <ul>
+      <% @batch_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :size %>
+      <%= f.text_field :size, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :color %>
+      <%= f.text_field :color, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :price_sold %>
+      <%= f.text_field :price_sold, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :sold_at %>
+      <%= f.text_field :sold_at, class: "form-control" %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :status %>
+      <%= f.select :status, options_for_select(@status_choices),
+:prompt => "Select Status", class: 'form-control' %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="field">
+      <%= f.label :style %>
+			<%= f.select :style_id, options_from_collection_for_select(@styles, :id, :name), :prompt => "Select Style", class: 'form-control'%>
+    </div>
+  </div>
+</div>
+
+<br>
+  <div class="actions">
+    <%= f.submit "Add Batch Item", class: 'btn btn-md btn-warning' %>
+  </div>
+<% end %>
+<br>
+<table class="table table-striped added_batch ">
+   <thead>
+     <tr>
+       <% request.session[:added_batch_items].first.keys.each do |key| %>
+         <th><%= key.titleize if key.is_a?(String) %></th>
+       <% end %>
+     </tr>
+   </thead>
+   <tbody>
+ <% request.session[:added_batch_items].each do |hash| %>
+   <tr>
+    <% hash.values.each do |value| %>
+       <td><%= value %></td>
+    <% end %>
+    </tr>
+   <% end %>
+   </tbody>
+</table>
+
+<h4>"Clearance this batch" action here"</h4>
