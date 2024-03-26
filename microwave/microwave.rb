@@ -1,5 +1,3 @@
-require 'pry'
-
 class Microwave
   SECONDS_IN_ONE_MINUTE = 60
 
@@ -36,14 +34,6 @@ class Microwave
   def seconds
     return "00" if @input % SECONDS_IN_ONE_MINUTE == 0
 
-    # seconds = (@input % SECONDS_IN_ONE_MINUTE).to_s
-    # seconds = if seconds < SECONDS_IN_ONE_MINUTE.to_s
-    #             seconds.prepend("0") if seconds.to_i < 10
-    #           else
-
-    #           end
-
-    # seconds
     seconds = (@input % SECONDS_IN_ONE_MINUTE).to_s
     seconds.prepend("0") if seconds.to_i < 10
     seconds
